@@ -1,0 +1,6 @@
+C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.exe.config
+C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.csprojResolveAssemblyReference.cache
+C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.exe
+C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\SortingAlgorithms\SortingAlgorithms\bin\Debug\SortingAlgorithms.pdb
+C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.exe
+C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\SortingAlgorithms\SortingAlgorithms\obj\Debug\SortingAlgorithms.pdb
