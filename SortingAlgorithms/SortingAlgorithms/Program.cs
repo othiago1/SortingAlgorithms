@@ -8,25 +8,16 @@ namespace SortingAlgorithms
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            int[] arr;
-            arr = new int[]{10,2,7,23,42,78,98,54,32,12};
 
-            Console.WriteLine("arr : ", arr);
-            BolhaSort(arr);
-            Console.WriteLine("arr : ", arr);
-        }
-    
-      public static int[] BolhaSort(int[] name) 
+        public static int[] BubbleSort(int[] name)
         {
             int size = 0;
             int comparisons = 0;
             int changes = 0;
 
-            for (int i = size; i >= 0; i-- )
+            for (int i = size; i >= 0; i--)
             {
-                for (int j = 0; j < i; j++) 
+                for (int j = 0; j < i; j++)
                 {
                     comparisons++;
                     if (name[j] > name[j + 1])
@@ -38,10 +29,31 @@ namespace SortingAlgorithms
                     }
                 }
             }
-           
+
             return name;
-               
+
         }
+
+
+        static void Main(string[] args)
+        {
+            int[] arr = new int[10] { 10, 2, 7, 23, 42, 78, 98, 54, 32, 12 };
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("[" + arr[i] + "]");
+            }
+
+            BubbleSort(arr);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine( "[" + arr[i] + "]");
+            }
+            Console.ReadLine();
+        }
+    
+     
          
     }
 }
