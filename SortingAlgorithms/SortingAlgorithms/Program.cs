@@ -8,28 +8,39 @@ namespace SortingAlgorithms
 {
     class Program
     {
-
         public static int[] BubbleSort(int[] name)
         {
             int size = 0;
             int comparisons = 0;
             int changes = 0;
+            int aux = 0;
 
-            for (int i = size; i >= 0; i--)
+
+
+            for (int write = 0; write < name.Length; write++)
             {
-                for (int j = 0; j < i; j++)
+                for (int sort = 0; sort < name.Length - 1; sort++)
                 {
                     comparisons++;
-                    if (name[j] > name[j + 1])
+                    if (name[sort] > name[sort + 1])
                     {
-                        int aux = name[j];
-                        name[j] = name[j + 1];
-                        name[j + 1] = aux;
+                        aux = name[sort + 1];
+                        name[sort + 1] = name[sort];
+                        name[sort] = aux;
                         changes++;
                     }
                 }
             }
+            
+            
+           
 
+            Console.WriteLine(" ");
+            Console.WriteLine("Comparações: " + comparisons);
+            Console.WriteLine("Trocas: " + changes);
+            Console.WriteLine("Tamanho: " + name.Count());
+            Console.WriteLine(" ");
+            
             return name;
 
         }
@@ -39,18 +50,20 @@ namespace SortingAlgorithms
         {
             int[] arr = new int[10] { 10, 2, 7, 23, 42, 78, 98, 54, 32, 12 };
 
+            Console.WriteLine("Antes");
             for (int i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine("[" + arr[i] + "]");
-            }
+                Console.Write(arr[i] + " ");
 
+            Console.WriteLine(" ");
+            
             BubbleSort(arr);
 
+            Console.WriteLine("Depois");
             for (int i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine( "[" + arr[i] + "]");
-            }
+                Console.Write(arr[i] + " ");
             Console.ReadLine();
+
+           
         }
     
      
