@@ -9,6 +9,7 @@ namespace SortingAlgorithms
 {
     class Program
     {
+        
         public static int[] BubbleSort(int[] name)
         {
            
@@ -50,6 +51,11 @@ namespace SortingAlgorithms
 
         static void Main(string[] args)
         {
+            List<int> Lista = new List<int>();
+            for (int i = 0; i < 15; i++)
+            {
+                
+            }
             int[] arr = new int[10] { 10, 2, 7, 23, 42, 78, 98, 54, 32, 12 };
 
             Console.WriteLine("Antes");
