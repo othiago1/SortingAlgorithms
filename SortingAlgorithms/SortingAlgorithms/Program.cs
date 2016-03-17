@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace SortingAlgorithms
 {
@@ -10,13 +11,15 @@ namespace SortingAlgorithms
     {
         public static int[] BubbleSort(int[] name)
         {
-            int size = 0;
+           
             int comparisons = 0;
             int changes = 0;
             int aux = 0;
 
+            Stopwatch time = new Stopwatch();
 
-
+            time.Start();
+            
             for (int write = 0; write < name.Length; write++)
             {
                 for (int sort = 0; sort < name.Length - 1; sort++)
@@ -32,17 +35,16 @@ namespace SortingAlgorithms
                 }
             }
             
-            
+            time.Stop();
            
-
             Console.WriteLine(" ");
             Console.WriteLine("Comparações: " + comparisons);
             Console.WriteLine("Trocas: " + changes);
             Console.WriteLine("Tamanho: " + name.Count());
+            Console.WriteLine("Tempo: " + time.Elapsed);
             Console.WriteLine(" ");
             
             return name;
-
         }
 
 
