@@ -58,16 +58,18 @@ namespace SortingAlgorithms
 
         static void Main(string[] args)
         {
+            while (a < 2000)
+            {
+            
             Random random = new Random();
             
             int[] arr = new int[a];
 
-            while (a < 2000)
-            {
+            
 
                 for (int i = 0; i < a; i++)
                 {
-                    arr[i] = random.Next(0, 101);
+                    arr[i] = random.Next(0, 2001);
                 }
 
 
