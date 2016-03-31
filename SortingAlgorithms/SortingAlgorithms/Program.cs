@@ -4,20 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;    
+
 
 namespace SortingAlgorithms
 {
     class Program
     {
+        public static Stopwatch time;
+        public static int comparisons;
         
+              
         public static int[] BubbleSort(int[] name)
         {
-           
-            int comparisons = 0;
+            
+
+            comparisons = 0;
             int changes = 0;
             int aux = 0;
 
-            Stopwatch time = new Stopwatch();
+            time = new Stopwatch();
 
             time.Start();
             
@@ -37,7 +43,7 @@ namespace SortingAlgorithms
             }
             
             time.Stop();
-           
+            
             Console.WriteLine(" ");
             Console.WriteLine("Comparações: " + comparisons);
             Console.WriteLine("Trocas: " + changes);
@@ -48,30 +54,61 @@ namespace SortingAlgorithms
             return name;
         }
 
+        public static int a = 10;
 
         static void Main(string[] args)
         {
-            List<int> Lista = new List<int>();
-            for (int i = 0; i < 15; i++)
+            Random random = new Random();
+            
+            int[] arr = new int[a];
+
+            while (a < 2000)
             {
+
+                for (int i = 0; i < a; i++)
+                {
+                    arr[i] = random.Next(0, 101);
+                }
+
+
+                Console.WriteLine("Antes");
+                for (int i = 0; i < arr.Length; i++)
+                    Console.Write(arr[i] + " ");
+
+                Console.WriteLine(" ");
+
+                BubbleSort(arr);
+
+                Console.WriteLine("Depois");
+                for (int i = 0; i < arr.Length; i++)
+                    Console.Write(arr[i] + " ");
+
+
+                //txt things
+                string path = @"C:\Users\matheus.barros\Desktop\GitHub\SortingAlgorithms\Numbers.txt";
+                if (!File.Exists(path))
+                {
+                    File.Create(path).Dispose();
+                    using (TextWriter tw = new StreamWriter(path))
+                    {
+                        tw.WriteLine(arr.Length + "; " + time.Elapsed + "; " + comparisons + ";");
+                        tw.Close();
+                    }
+
+                }
+
+                else if (File.Exists(path))
+                {
+                    TextWriter tw = new StreamWriter(path, true);
+                    tw.WriteLine(arr.Length + "; " + time.Elapsed + "; " + comparisons + ";");
+                    tw.Close();
+                }
+
+                a += 5;
+
+                Console.ReadLine();
                 
             }
-            int[] arr = new int[10] { 10, 2, 7, 23, 42, 78, 98, 54, 32, 12 };
-
-            Console.WriteLine("Antes");
-            for (int i = 0; i < arr.Length; i++)
-                Console.Write(arr[i] + " ");
-
-            Console.WriteLine(" ");
-            
-            BubbleSort(arr);
-
-            Console.WriteLine("Depois");
-            for (int i = 0; i < arr.Length; i++)
-                Console.Write(arr[i] + " ");
-            Console.ReadLine();
-
-           
         }
     
      
